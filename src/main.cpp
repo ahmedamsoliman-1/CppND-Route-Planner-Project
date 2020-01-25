@@ -8,6 +8,7 @@
 #include "render.h"
 #include "route_planner.h"
 
+
 using namespace std::experimental;
 
 static std::optional<std::vector<std::byte>> ReadFile(const std::string &path)

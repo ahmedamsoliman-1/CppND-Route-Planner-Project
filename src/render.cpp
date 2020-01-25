@@ -6,6 +6,7 @@ static io2d::rgba_color RoadColor(Model::Road::Type type);
 static io2d::dashes RoadDashes(Model::Road::Type type);
 static io2d::point_2d ToPoint2D( const Model::Node &node ) noexcept; 
 
+
 Render::Render( RouteModel &model ):
     m_Model(model)
 {

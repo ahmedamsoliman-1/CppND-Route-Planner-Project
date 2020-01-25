@@ -6,6 +6,7 @@
 #include <algorithm>
 #include <assert.h>
 
+
 // Nothing
 
 static Model::Road::Type String2RoadType(std::string_view type)
