@@ -58,17 +58,36 @@ int main(int argc, const char **argv)
     // RoutePlanner object below in place of 10, 10, 90, 90
     float start_x , start_y , end_x, end_y;
 
-    std::cout << "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%" << std::endl;
-    std::cout << "%%% Please Enter starting point 🚦 and ending point 🏁  between (0 and 99) for the search  %%%" << std::endl;
-    std::cout << "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%" << std::endl;
-    std::cout << "Starting point for start_x : ";
-    std::cin >> start_x;
-    std::cout << "Starting point for start_y : " ;
-    std::cin >> start_y;
-    std::cout << "Ending point for end_x : " ;
-    std::cin >> end_x;
-    std::cout << "Ending point for end_y : " ;
-    std::cin >> end_y ;
+    // std::cout << "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%" << std::endl;
+    // std::cout << "%%% Please Enter starting point 🚦 and ending point 🏁  between (0 and 99) for the search  %%%" << std::endl;
+    // std::cout << "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%" << std::endl;
+    // std::cout << "Starting point for start_x : ";
+    // std::cin >> start_x;
+    // std::cout << "Starting point for start_y : " ;
+    // std::cin >> start_y;
+    // std::cout << "Ending point for end_x : " ;
+    // std::cin >> end_x;
+    // std::cout << "Ending point for end_y : " ;
+    // std::cin >> end_y ;
+
+    //Get user input and validate it - udacity review 
+    // float start_x, start_y, end_x, end_y;
+    std::vector<float> values={start_x, start_y, end_x, end_y};
+    std::cout << "Enter values for start_x, start_y, end_x and end_y in this order using numbers from 0 to 100.\n";
+    for (float val : values){
+        std::cin>>val;
+        while (!(std::cin) || val< 0 || val > 100) {
+            std::cout << "Please enter a valid value from 0 to 100.\n";
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            std::cin >> val;
+        }
+    }
+
+
+
+// Awesome how you have read in the user input here! After getting user input it is also always a nice idea to validate it, as this makes your code more robust further down the road and prevents unpleasant crashes further down the road. An example code snippet doing that would be the following:
+
 
 
     // Build Model
